@@ -8,7 +8,7 @@ echo Using project id $PROJECT for setup...
 wget https://raw.githubusercontent.com/KMarkert/ee-workshop-esa2023/main/Dockerfile -O Dockerile
 
 # submit dockerfile to be built 
-CONTAINER=gcr.io/$PROJECT/ee-esa2023
+CONTAINER=gcr.io/$PROJECT/ee-esa-image
 gcloud builds submit --tag $CONTAINER
 
 # enable to notebooks api to programmatically create notebook env
