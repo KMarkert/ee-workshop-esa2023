@@ -5,7 +5,7 @@ PROJECT=$(gcloud config get-value project)
 echo Using project id $PROJECT for setup...
 
 # pull the dockerfile to build custom EE container
-wget https://raw.githubusercontent.com/KMarkert/ee-workshop-esa2023/main/Dockerfile -O Dockerile
+wget https://raw.githubusercontent.com/KMarkert/ee-workshop-esa2023/main/Dockerfile -O Dockerfile
 
 # submit dockerfile to be built 
 CONTAINER=gcr.io/$PROJECT/ee-esa-image
