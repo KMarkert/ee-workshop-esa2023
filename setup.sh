@@ -5,7 +5,7 @@ PROJECT=$(gcloud config get-value project)
 echo Using project id $PROJECT for setup...
 
 # pull the dockerfile to build custom EE container
-wget <>
+wget https://raw.githubusercontent.com/KMarkert/ee-workshop-esa2023/main/Dockerfile -O Dockerile
 
 # submit dockerfile to be built 
 CONTAINER=gcr.io/$PROJECT/ee-esa2023
@@ -19,4 +19,4 @@ gcloud notebooks instances create ee-esa2023 \
     --container-repository=$CONTAINER \
     --location=us-central1-a \
     --machine-type=n1-standard-1
-    # --post-startup-script= TODO(kmarkert)
+    --post-startup-script= TODO(kmarkert)
