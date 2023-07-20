@@ -19,4 +19,4 @@ gcloud notebooks instances create ee-esa2023 \
     --container-repository=$CONTAINER \
     --location=us-central1-a \
     --machine-type=n1-standard-1
-    --post-startup-script= TODO(kmarkert)
+    --post-startup-script=https://raw.githubusercontent.com/KMarkert/ee-workshop-esa2023/main/notebook_startup.sh
