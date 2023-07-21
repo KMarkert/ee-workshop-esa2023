@@ -3,8 +3,7 @@ FROM gcr.io/deeplearning-platform-release/base-cpu
 
 
 # install the required packages for working with EE in Python
-RUN conda update -n base -c defaults conda -y \
-  && conda install -y -c conda-forge \
+RUN conda install -y -c conda-forge \
     earthengine-api \
     geemap \
     jupyter_contrib_nbextensions \
