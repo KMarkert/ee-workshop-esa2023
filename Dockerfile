@@ -11,7 +11,7 @@ RUN pip install --no-cache \
 RUN jupyter nbextension enable --py --sys-prefix ipyleaflet
 
 RUN git clone https://github.com/KMarkert/ee-workshop-esa2023.git \
- && cp -r ee-workshop-esa2023/notebooks /home/jupyter/ \
+ && cp -r ee-workshop-esa2023/notebooks /home/jupyter \
  && rm -rf ee-workshop-esa2023
 
 # the base VertexAI image will have all that is required for Jupyter runtime
