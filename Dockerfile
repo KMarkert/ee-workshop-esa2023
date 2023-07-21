@@ -1,16 +1,17 @@
 # pull from base VertexAI CPU image
-FROM gcr.io/deeplearning-platform-release/base-cpu@sha256:ce993f1c3684513a22fd89466591fabf42a9a9d495146d3c4a770c380b368a8d
+FROM gcr.io/deeplearning-platform-release/base-cpu
 
 
 # install the required packages for working with EE in Python
-RUN pip install --no-cache-dir \
+RUN conda update -n base -c defaults conda -y \
+  && conda install -y -c conda-forge \
     earthengine-api \
     geemap \
-    ipyleaflet 
+    jupyter_contrib_nbextensions \
+  && conda clean --all -f -y
 
-# enable the leaflet extension to view map objects
-RUN jupyter nbextension enable --py --sys-prefix ipyleaflet
-# RUN jupyter labextension install @jupyter-widgets/jupyterlab-manager jupyter-leaflet
+# enable extra extensions for notebook experience
+RUN jupyter nbextension enable scratchpad/main
 
 # the base VertexAI image will have all that is required for Jupyter runtime
 # just need to install the pacakges for the kernel
