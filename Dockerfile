@@ -6,11 +6,11 @@ FROM gcr.io/deeplearning-platform-release/base-cpu
 RUN conda install -y -c conda-forge \
     earthengine-api \
     geemap \
-    jupyter_contrib_nbextensions \
+    # jupyter_contrib_nbextensions \
   && conda clean --all -f -y
 
 # enable extra extensions for notebook experience
-RUN jupyter nbextension enable scratchpad/main
+# RUN jupyter nbextension enable scratchpad/main
 
 # the base VertexAI image will have all that is required for Jupyter runtime
 # just need to install the pacakges for the kernel
