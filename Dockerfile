@@ -10,8 +10,8 @@ RUN pip install --no-cache \
 # enable the leaflet extension to view map objects
 RUN jupyter nbextension enable --py --sys-prefix ipyleaflet
 
-RUN git clone https://github.com/KMarkert/ee-workshop-esa2023/ \
- && cp ee-workshop-esa2023/notebooks /home/jupyter/ \
+RUN git clone https://github.com/KMarkert/ee-workshop-esa2023.git \
+ && cp -r ee-workshop-esa2023/notebooks /home/jupyter/ \
  && rm -rf ee-workshop-esa2023
 
 # the base VertexAI image will have all that is required for Jupyter runtime
