@@ -8,5 +8,8 @@ cd /home/jupyter
 git clone https://github.com/KMarkert/ee-workshop-esa2023.git
 
 # move files around
-cp -r ee-workshop-esa2023/notebooks .
-rm -rf ee-workshop-esa2023
+rm ee-workshop-esa2023/Dockerfile \
+  ee-workshop-esa2023/notebook_startup.sh \
+  ee-workshop-esa2023/README.md \
+  ee-workshop-esa2023/setup.sh \
+  ee-workshop-esa2023/.gitignore
