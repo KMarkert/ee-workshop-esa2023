@@ -18,5 +18,5 @@ gcloud services enable notebooks.googleapis.com
 gcloud notebooks instances create ee-esa2023 \
     --container-repository=$CONTAINER \
     --location=us-west1-a \
-    --machine-type=n1-standard-1 \
+    --machine-type=e2-standard-2 \
     --post-startup-script=https://raw.githubusercontent.com/KMarkert/ee-workshop-esa2023/main/notebook_startup.sh
