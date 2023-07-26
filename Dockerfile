@@ -4,7 +4,7 @@ FROM gcr.io/deeplearning-platform-release/base-cpu
 
 # install the required packages for working with EE in Python
 RUN conda install -y -c conda-forge mamba \
-  && mamba install -y -c conda-forge
+  && mamba install -y -c conda-forge \
     earthengine-api \
     geemap \
     # jupyter_contrib_nbextensions \
