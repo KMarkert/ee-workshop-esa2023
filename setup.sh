@@ -4,19 +4,12 @@
 PROJECT=$(gcloud config get-value project)
 echo Using project id $PROJECT for setup...
 
-# pull the dockerfile to build custom EE container
-wget https://raw.githubusercontent.com/KMarkert/ee-workshop-esa2023/main/Dockerfile -O Dockerfile
-
-# submit dockerfile to be built 
-CONTAINER=gcr.io/$PROJECT/ee-esa-image
-gcloud builds submit --tag $CONTAINER
-
 # enable to notebooks api to programmatically create notebook env
 gcloud services enable notebooks.googleapis.com
 
 # create notebook instance
 gcloud notebooks instances create ee-esa2023 \
-    --container-repository=$CONTAINER \
+    --container-repository=us-west1-docker.pkg.dev/ee-kmarkert-demo/esa2023-jupyter/esa2023-jupyter-image:latest \
     --location=us-west1-a \
     --machine-type=e2-standard-2 \
     --post-startup-script=https://raw.githubusercontent.com/KMarkert/ee-workshop-esa2023/main/notebook_startup.sh
